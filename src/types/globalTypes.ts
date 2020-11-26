@@ -17,6 +17,7 @@ export enum AccountErrorCode {
   DELETE_SUPERUSER_ACCOUNT = "DELETE_SUPERUSER_ACCOUNT",
   DUPLICATED_INPUT_ITEM = "DUPLICATED_INPUT_ITEM",
   GRAPHQL_ERROR = "GRAPHQL_ERROR",
+  INACTIVE = "INACTIVE",
   INVALID = "INVALID",
   INVALID_CREDENTIALS = "INVALID_CREDENTIALS",
   INVALID_PASSWORD = "INVALID_PASSWORD",
@@ -1660,6 +1661,12 @@ export interface ShippingPriceInput {
   maximumOrderWeight?: any | null;
   type?: ShippingMethodTypeEnum | null;
   shippingZone?: string | null;
+}
+
+export interface ShippingZipCodeCreateInput {
+  shippingMethod: string;
+  start: string;
+  end: string;
 }
 
 export interface ShippingZoneCreateInput {
